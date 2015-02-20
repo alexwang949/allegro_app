@@ -72,6 +72,7 @@ get '/events' do
 end
 
 get '/eventsdb' do 
+	# binding.pry
 	events = Event.all.to_json
 end
 

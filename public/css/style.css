@@ -1,0 +1,64 @@
+#loginbutton {
+	width: 160px;
+}
+
+#title {
+	font-size: 80px;
+/*	margin-bottom: 10px;
+*/	font-style: bold;
+/*	text-align: center;
+*//*	text-decoration: underline;
+*/}
+
+/*.login-all {
+	background-image: url('../images/concert.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	background-position: 30%;
+ 	-webkit-filter: blur(2px);
+ 	height: 100%;
+ 	width: 100%;
+ 	position: fixed;
+ 	margin-top: 5%;
+ 	margin-bottom: 100px;
+}
+
+.login {
+	float: left;
+	position: fixed;
+	color: white;
+	margin: 10%;
+	text-align: center;
+}*/
+
+/*.background {
+	width: 90%;
+	height: 100%;
+	background-color: black;
+	display: block;
+	position: fixed;
+	margin: 0 auto;
+}*/
+.login {
+	text-align: center;
+	background-image: url('../images/concert.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	color: white;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	padding-top: 10%;
+
+
+}
+
+.login-all {
+	width: 80%;
+	margin: 0 auto;
+	height: 100%;
+	background-color: black;
+	position: fixed;
+}
