@@ -1,0 +1,68 @@
+html {
+/*	background-color: black;
+*/}
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	background-color: white;
+	height: 100%;
+}
+.categories-section {
+	line-height: 3em;
+
+}
+
+.categ-button {
+	border-style: solid;
+	border-width: thin;
+	border-color: black;
+	border-radius: 10px;
+	float: left;
+	width: 5em;
+	height: 2em;
+	margin: 0 auto;
+	text-align: center;
+	display: block;	
+/*	margin: .5em;
+*/	font-style: italic;
+}
+
+
+
+.description-area {
+	clear: both;
+	display: inline-block;
+	float: left;
+}
+
+#events-button {
+	clear: both;
+	display: block;
+}
+.video-area {
+	/*clear: both;*/
+	display: inline-block;
+	float: right;
+
+	/*visibility: hidden;*/
+/*	margin: 1em;
+*/}
+
+.hidden {
+	display: inline-block;
+	float: right;
+	visibility: hidden;
+}
+.ul-area {
+	clear: both;
+	height: 100%;
+}
+
+.events-area {
+	clear: both;
+	height: 100%;
+}
+
+h1 {
+	font-size: 29px;
+}
