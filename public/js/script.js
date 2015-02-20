@@ -17,8 +17,8 @@ function getPieces(id) {
 		var first = parsed[0];
 		// console.log(first.url, first.title, first.url);
 		$('.description-area').empty();
-		$('.description-area').append('<h1>Composer:</h1>' + first.composer + '<h1>Title:</h1>' + first.title + '<h1>History:</h1>' + first.info);
-		$videoArea.append('<iframe id="ytplayer" type="text/html" width="500px" height="400px"src=' + first.url + 'modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1frameborder="20"/>');
+		$('.description-area').append('Composer: ' + first.composer + '<h5>Title:</h5>' + first.title + '<h5>History:</h5>' + first.info);
+		$videoArea.append('<iframe id="ytplayer" type="text/html" width="500px" height="290px"src=' + first.url + 'modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1frameborder="20"/>');
 
 	});
 };
@@ -56,7 +56,7 @@ function populateMyFavEventsDOM(parsed) {
 
 	parsed.forEach(function(each){
 
-	var $li = $('<br><h1>Event:</h1>' + each.event_name +' ' + '<h1>Location</h1>' + each.street_address + '<h1>Neighborhood:</h1>' + each.neighborhood + each.web_description + each.date_time_description);
+	var $li = $('<h3>Event:</h3>' + each.event_name +' ' + '<h3>Location</h1>' + each.street_address + '<h3>Neighborhood:</h3>' + each.neighborhood + each.web_description + each.date_time_description);
 
 	$eventsArea.append($li);
 
@@ -73,9 +73,9 @@ function populateEventsDOM(data) {
 
 
 			var $testDiv = $("<div>");
-			var $li = $('<br><h1>Event:</h1>' + each.event_name +' ' + '<h1>Location</h1>' + each.street_address + '<h1>Neighborhood:</h1>' + each.neighborhood + each.web_description + each.date_time_description);
+			var $li = $('<br><h3>Event:</h3>' + each.event_name +' ' + '<h3>Location</h3>' + each.street_address + '<h3>Neighborhood:</h3>' + each.neighborhood + each.web_description + each.date_time_description);
 			// debugger
-			var $addToFavoritesButton = $('<button id="addToFavoritesButton">ADD TO FAVORITES</button>');
+			var $addToFavoritesButton = $('<button class="button-primary" id="addToFavoritesButton">ADD TO FAVORITES</button>');
 			
 			// $li.attr('api_id', each.id);
 			// $eventsArea.append('<br><h1>Event:</h1>' + each.event_name +' ' + '<h1>Location</h1>' + each.street_address + '<h1>Neighborhood:</h1>' + each.neighborhood + each.web_description + each.date_time_description + "<br><button id='add-to-favorites'>ADD TO FAVORITES</button><br><hr>")
