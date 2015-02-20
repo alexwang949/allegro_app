@@ -10,6 +10,11 @@
 *//*	text-decoration: underline;
 */}
 
+.hidden-player {
+	visibility: hidden;
+	display: none;
+}
+
 /*.login-all {
 	background-image: url('../images/concert.jpg');
 	background-repeat: no-repeat;
