@@ -70,7 +70,7 @@ get '/events' do
 end
 
 get '/eventsdb' do 
-	events = Event.all.to_json
+	events = Event.limit(5).to_json
 end
 
 # ADD EVENT TO FAVS ##

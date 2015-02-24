@@ -15,6 +15,12 @@
 	display: none;
 }
 
+.map-style {
+	display: inline-block;
+	float: right;
+	margin-top: 20px;
+}
+
 /*.login-all {
 	background-image: url('../images/concert.jpg');
 	background-repeat: no-repeat;
