@@ -3,9 +3,9 @@ require 'sinatra/reloader'
 require './lib/mood.rb'
 require './lib/piece.rb'
 require './lib/user.rb'
-# require './lib/connection.rb'
+require './lib/connection.rb'
 # require './lib/database.yml'
-require './environments.rb'
+# require './environments.rb'
 require './lib/event.rb'
 require './lib/favorite.rb'
 require 'sinatra'
@@ -32,7 +32,6 @@ end
 # login 
 post '/login' do
 	current_user = User.find_by(username: params[:username])
-
 	if current_user && current_user["password"] == params["password"]
 		session["user_id"] = current_user["id"]
 		redirect('/welcome')
@@ -56,16 +55,13 @@ get '/moods/:id' do
 	pieces = Piece.where(mood_id: params[:id]).to_json
 end
 
-
 # API CALL EVENTS, CONDITIONAL TO CHECK IF EVENT EXISTS.
 # 	IF DOESN'T EXIST, ADD TO EVENTS TABLE
 
 get '/events' do 
-	# response = JSON.generate(HTTParty.get('http://api.nytimes.com/svc/events/v2/listings.json?&filters=category:Classical&limit=5&api-key=bf3013d600013e74c7e448bff56e2f1f:18:70373815'))
 	response = HTTParty.get('http://api.nytimes.com/svc/events/v2/listings.json?&filters=category:Classical&limit=5&api-key=bf3013d600013e74c7e448bff56e2f1f:18:70373815')
 	results = response['results']
 	results.each do |event|
-
 		if Event.find_by(event_api_id: event['event_id']) == nil
 			event = Event.create({event_name: event['event_name'], venue_name: event['venue_name'], neighborhood: event['neighborhood'], street_address: event['street_address'], telephone: event['telephone'], web_description: event['web_description'], postal_code: event['postal_code'], venue_detail_url: event['venue_detail_url'], date_time_description: event['date_time_description'], event_api_id: event['event_id']})
 		end
@@ -74,7 +70,6 @@ get '/events' do
 end
 
 get '/eventsdb' do 
-	# binding.pry
 	events = Event.all.to_json
 end
 
@@ -88,11 +83,16 @@ end
 ## GET ALL MY FAV EVENTS
 
 get '/favorites/user' do 
-	# binding.pry
 	user = User.find(session['user_id'])
 	events = user.events.to_json
-
 end
+
+delete '/favorites/:id' do 
+	user_id = session["user_id"]
+	find_fav = Favorite.where(:user_id => user_id, :event_id => params[:id])
+	Favorite.destroy(find_fav)
+end
+
 
 
 
